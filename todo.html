@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("#submit").click(function() {
+          var newTodo = $("#todo").val();
+          $("ul").prepend("<li>" + newTodo + "</li>");
+        });
+
+
+        $("ul").click("li", function(event) {
+          $(event.target).remove();
+        });
+      });
+    </script>
+
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+      }
+
+      #todo-list li {
+        list-style: circle;
+        padding: 2px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>Todo List</h1>
+
+    <div id="instructions">
+      <ol>
+        <li>Add todo in the box below.</li>
+        <li>Click the todo item to clear it from the list.</li>
+      </ol>
+    </div>
+
+    <div>
+      <form id="todo-form" action="" method="post">
+        <label for="todo">New To Do</label><br/>
+        <input type="text" name="todo" id="todo"><br/>
+        <input type="button" id="submit" value="Add Todo" name="submit"><br/>
+      </form>
+    </div>
+
+    <div id="todo-list">
+      <ul>
+      </ul>
+    </div>
+
+  </body>
+</html>
